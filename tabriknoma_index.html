@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Tabriknoma — Maxsus tabriklar</title>
+<meta name="description" content="Yaqinlaringiz uchun chiroyli va esda qolarli tabriknoma.">
+<style>
+:root{--bg:#07070c;--card:#11111a;--text:#fff;--muted:#aaaabd;--gold:#f4c76b;--pink:#ff6fae;--line:#29293a}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 50% -10%,#39203b 0,#0a0910 42%,#050509 100%);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;min-height:100vh}
+a{text-decoration:none;color:inherit}.wrap{max-width:900px;margin:auto;padding:22px}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:8px 0 22px}.brand{font-weight:800;letter-spacing:.4px}.brand span{color:var(--gold)}
+.badge{border:1px solid #4c4054;background:#17131d;border-radius:99px;padding:7px 11px;color:#e8d8e7;font-size:12px}
+.hero{text-align:center;padding:65px 10px 35px}.crown{font-size:45px;filter:drop-shadow(0 0 18px #f4c76b55)}h1{font-size:clamp(34px,9vw,68px);line-height:1.02;margin:15px 0;background:linear-gradient(90deg,#fff,#ffd98b,#ff9ac5,#fff);-webkit-background-clip:text;color:transparent} .hero p{color:var(--muted);font-size:17px;max-width:620px;margin:18px auto}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:15px;padding:14px 20px;font-weight:800;cursor:pointer;font-size:15px}.primary{background:linear-gradient(135deg,#f7d27d,#eaa64e);color:#20170b;box-shadow:0 12px 35px #f1bd5c2b}.dark{background:#171722;color:#fff;border:1px solid var(--line)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:25px 0}.card{background:#11111acc;border:1px solid var(--line);border-radius:22px;padding:22px;backdrop-filter:blur(12px);box-shadow:0 15px 50px #0005}.card h3{margin:7px 0}.card p{color:var(--muted);font-size:14px;line-height:1.55}
+.panel{display:none;max-width:680px;margin:20px auto}.panel.active{display:block}.field{margin:13px 0}.field label{display:block;font-size:13px;color:#c7c7d5;margin-bottom:7px}input,textarea,select{width:100%;border:1px solid #303044;background:#0d0d15;color:#fff;border-radius:13px;padding:13px;font:inherit;outline:none}textarea{min-height:130px;resize:vertical}input:focus,textarea:focus,select:focus{border-color:#d5a95d}
+.adminbar{display:none}.adminbar.active{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}.small{font-size:12px;color:#8f8fa0}.result{display:none;margin-top:15px}.result.show{display:block}.linkbox{word-break:break-all;background:#090910;border:1px dashed #655b70;border-radius:12px;padding:12px;color:#ffd98b;font-size:13px}
+footer{color:#777789;text-align:center;padding:45px 0 20px;font-size:12px}.hidden{display:none!important}
+.overlay{position:fixed;inset:0;background:#05050aee;display:none;align-items:center;justify-content:center;padding:20px;z-index:20}.overlay.show{display:flex}.modal{max-width:420px;width:100%;background:#12121b;border:1px solid #39394b;border-radius:22px;padding:24px;box-shadow:0 25px 100px #000}
+.greeting{min-height:100vh;display:none;align-items:center;justify-content:center;padding:25px;text-align:center}.greeting.show{display:flex}.envelope{font-size:70px;animation:float 2.4s ease-in-out infinite}@keyframes float{50%{transform:translateY(-12px)}}.gbox{max-width:720px;width:100%;padding:40px 25px;border:1px solid #44394c;border-radius:30px;background:linear-gradient(145deg,#17131fdd,#0c0c13ee);box-shadow:0 30px 100px #000}.gname{font-size:clamp(36px,10vw,72px);margin:8px 0;background:linear-gradient(90deg,#ffe4a4,#ff82b8,#fff);-webkit-background-clip:text;color:transparent}.message{white-space:pre-wrap;color:#e7e3eb;line-height:1.8;font-size:17px}.from{color:#b6a9ba;margin-top:24px}.contact{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:25px}.contact a{background:#181821;border:1px solid #353545;padding:11px 14px;border-radius:12px;font-size:13px}.shine{position:relative;overflow:hidden}.shine:after{content:"";position:absolute;top:-100%;left:-30%;width:20%;height:300%;background:#fff3;transform:rotate(20deg);animation:shine 4s infinite}@keyframes shine{0%,55%{left:-40%}75%,100%{left:130%}}
+</style>
+</head>
+<body>
+<div id="greeting" class="greeting"><div class="gbox">
+  <div class="envelope">🎁</div>
+  <div class="small">SIZ UCHUN MAXSUS TABRIK</div>
+  <h1 class="gname" id="gName">Tabrik!</h1>
+  <div class="message" id="gMessage"></div>
+  <div class="from" id="gFrom"></div>
+  <div class="contact">
+    <a href="tel:+998882371787">📞 +998 88 237 1787</a>
+    <a href="tel:+998931688402">📞 +998 93 168 8402</a>
+    <a href="tel:+998944008784">📞 +998 94 400 8784</a>
+  </div>
+  <div style="margin-top:18px"><button class="btn dark" onclick="location.href=location.pathname">← Bosh sahifa</button></div>
+</div></div>
+
+<main id="home" class="wrap">
+  <nav class="nav"><div class="brand">✨ <span>Tabriknoma</span></div><div class="badge">PREMIUM</div></nav>
+  <section class="hero">
+    <div class="crown">👑</div>
+    <h1>Har bir tabrik<br>esda qolsin.</h1>
+    <p>Yaqin insoningiz uchun chiroyli, shaxsiy va maxsus tabriknoma yarating.</p>
+    <button class="btn primary shine" onclick="showContact()">🎁 Tabrik yaratish</button>
+  </section>
+  <section class="grid">
+    <div class="card"><div>💎</div><h3>Premium dizayn</h3><p>Yorqin animatsiyalar, nafis ranglar va mobil telefonda chiroyli ko‘rinadigan sahifa.</p></div>
+    <div class="card"><div>🔗</div><h3>Maxsus havola</h3><p>Har bir tabrik uchun alohida link yaratiladi. Linkni Telegram orqali yuborish mumkin.</p></div>
+    <div class="card"><div>💌</div><h3>Shaxsiy tabrik</h3><p>Qabul qiluvchining ismi va sizning tilagingiz alohida ko‘rsatiladi.</p></div>
+  </section>
+
+  <section id="admin" class="panel">
+    <div class="adminbar active">
+      <button class="btn dark" onclick="logout()">Chiqish</button>
+      <span class="small">Faqat administrator uchun</span>
+    </div>
+    <div class="card">
+      <h2>🎁 Yangi premium tabrik</h2>
+      <div class="field"><label>Qabul qiluvchining ismi</label><input id="name" placeholder="Masalan: Madina"></div>
+      <div class="field"><label>Kimdan?</label><input id="from" placeholder="Masalan: Ulug‘bekdan"></div>
+      <div class="field"><label>Tabrik matni</label><textarea id="msg" placeholder="Tug‘ilgan kuning muborak! Senga..."></textarea></div>
+      <div class="field"><label>Bayram turi</label><select id="type"><option>Tug‘ilgan kun</option><option>To‘y</option><option>Bitiruv</option><option>Bayram</option><option>Maxsus tabrik</option></select></div>
+      <button class="btn primary" style="width:100%" onclick="createLink()">🔗 Tabrik linkini yaratish</button>
+      <div id="result" class="result card">
+        <div class="small">Tayyor link:</div>
+        <div id="link" class="linkbox"></div>
+        <div style="display:flex;gap:10px;margin-top:12px;flex-wrap:wrap">
+          <button class="btn primary" onclick="copyLink()">📋 Nusxa olish</button>
+          <button class="btn dark" onclick="shareLink()">📤 Ulashish</button>
+          <a id="openLink" class="btn dark" target="_blank">👀 Ko‘rish</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>© 2026 Tabriknoma · Maxsus tabriklar xizmati</footer>
+</main>
+
+<div id="overlay" class="overlay"><div class="modal">
+  <h2>🔐 Administrator</h2>
+  <p class="small">Tabrik yaratish bo‘limi faqat siz uchun.</p>
+  <input id="pass" type="password" placeholder="Admin parol">
+  <button class="btn primary" style="width:100%;margin-top:12px" onclick="login()">Kirish</button>
+  <button class="btn dark" style="width:100%;margin-top:8px" onclick="hideContact()">Bekor qilish</button>
+  <div id="err" class="small" style="color:#ff8aa8;margin-top:10px"></div>
+</div></div>
+
+<script>
+/*
+  MUHIM:
+  Bu 0-so'mlik static versiya. Admin paroli frontend ichida bo'lgani uchun
+  haqiqiy maxfiy himoya emas. Keyinchalik backend/auth qo'shib kuchaytiramiz.
+*/
+const ADMIN_PASSWORD="TABRIK2026";
+const nums=["+998 88 237 1787","+998 93 168 8402","+998 94 400 8784"];
+
+function showContact(){document.getElementById('overlay').classList.add('show');document.getElementById('pass').focus()}
+function hideContact(){document.getElementById('overlay').classList.remove('show');document.getElementById('err').textContent=""}
+function login(){
+  if(document.getElementById('pass').value===ADMIN_PASSWORD){
+    hideContact(); document.getElementById('admin').classList.add('active'); document.getElementById('admin').scrollIntoView({behavior:"smooth"});
+  }else document.getElementById('err').textContent="Parol noto‘g‘ri.";
+}
+function logout(){document.getElementById('admin').classList.remove('active');window.scrollTo({top:0,behavior:"smooth"})}
+function enc(o){return btoa(unescape(encodeURIComponent(JSON.stringify(o)))).replaceAll("+","-").replaceAll("/","_").replaceAll("=","")}
+function dec(s){try{let x=s.replaceAll("-","+").replaceAll("_","/");x+="===".slice((x.length+3)%4);return JSON.parse(decodeURIComponent(escape(atob(x))))}catch(e){return null}}
+function createLink(){
+  const name=document.getElementById('name').value.trim(), from=document.getElementById('from').value.trim(), msg=document.getElementById('msg').value.trim(), type=document.getElementById('type').value;
+  if(!name||!msg){alert("Ism va tabrik matnini kiriting.");return}
+  const data={name,from:from||"Siz uchun maxsus tabrik",msg,type};
+  const url=location.href.split("#")[0]+"#t="+enc(data);
+  document.getElementById('link').textContent=url;
+  document.getElementById('openLink').href=url;
+  document.getElementById('result').classList.add('show');
+}
+async function copyLink(){await navigator.clipboard.writeText(document.getElementById('link').textContent);alert("Link nusxalandi!")}
+async function shareLink(){
+  const u=document.getElementById('link').textContent;
+  if(navigator.share) await navigator.share({title:"Siz uchun maxsus tabrik 🎁",text:"Siz uchun maxsus tabrik bor! 🎁",url:u});
+  else copyLink();
+}
+function showGreeting(d){
+  document.getElementById('home').style.display="none";
+  document.getElementById('greeting').classList.add('show');
+  document.getElementById('gName').textContent=d.name;
+  document.getElementById('gMessage').textContent=d.msg;
+  document.getElementById('gFrom').textContent="💌 "+d.from+" · "+d.type;
+  document.title=d.name+" uchun maxsus tabrik 🎁";
+}
+const m=location.hash.match(/^#t=(.+)$/); if(m){const d=dec(m[1]);if(d)showGreeting(d)}
+</script>
+</body>
+</html>
